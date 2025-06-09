@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 503452718}
   - component: {fileID: 503452717}
   - component: {fileID: 503452716}
+  - component: {fileID: 503452720}
   - component: {fileID: 503452719}
   m_Layer: 0
   m_Name: Enemy
@@ -721,9 +722,11 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"E_speed","value":{"$content":300.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"collider_enemy","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Collider2D,
+      UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"enemy_death","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Collider2D,
       UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1799426522}
+    - {fileID: 503452720}
 --- !u!60 &503452719
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -768,18 +771,63 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 59.21386, y: -0.49672437}
-      - {x: 59.46669, y: -0.33006543}
-      - {x: 59.17554, y: -0.12949166}
-      - {x: 58.570415, y: -0.06952512}
-      - {x: 57.804394, y: -0.112722754}
-      - {x: 57.585793, y: -0.38758075}
-      - {x: 57.815662, y: -0.4948213}
-      - {x: 57.78861, y: -0.8363143}
-      - {x: 57.81181, y: -1.6026603}
-      - {x: 59.219967, y: -1.613296}
-      - {x: 59.19083, y: -0.8295968}
+    - - {x: 59.06727, y: -0.21890503}
+      - {x: 59.090736, y: 0.11683476}
+      - {x: 58.973377, y: 0.3600309}
+      - {x: 58.247707, y: 0.3171723}
+      - {x: 57.651955, y: 0.23850045}
+      - {x: 57.637722, y: -0.15461439}
+      - {x: 57.666706, y: -0.33514}
+      - {x: 57.650276, y: -0.4851538}
+      - {x: 57.655758, y: -0.88338834}
+      - {x: 59.03395, y: -0.7957787}
+      - {x: 59.060787, y: -0.45917124}
   m_UseDelaunayMesh: 0
+--- !u!61 &503452720
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503452713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 58.338127, y: 0.47175297}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5168762, y: 0.26949245}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,7 +2865,7 @@ Transform:
   m_GameObject: {fileID: 1553248568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.52, y: -0.93, z: 0}
+  m_LocalPosition: {x: 58.36, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3125,8 +3173,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDrag: 4.5
+  m_Mass: 1
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -3170,7 +3218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Speed","value":{"$content":8.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Jump","value":{"$content":1500.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Jump","value":{"$content":500.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"collider","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Collider2D,
       UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
@@ -3253,9 +3301,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.074468076}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7234046
 --- !u!61 &1799426523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3285,10 +3333,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019253492, y: -0.709404}
+  m_Offset: {x: 0, y: -0.5305766}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3299,7 +3347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0761821, y: 0.14595586}
+  m_Size: {x: 1, y: 0.16401231}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -3308,10 +3356,10 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1330866921}
   - {fileID: 575113058}
-  - {fileID: 1799426521}
   - {fileID: 391091232}
   - {fileID: 503452714}
   - {fileID: 823208930}
+  - {fileID: 1799426521}
   - {fileID: 1250577447}
   - {fileID: 1541111706}
   - {fileID: 1589299648}
